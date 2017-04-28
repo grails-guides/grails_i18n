@@ -1,4 +1,13 @@
+# tag::configurationLanguages[]
 ---
+guide:
+    languages:
+        - en
+        - es
+        - it
+        - de
+---
+# end::configurationLanguages[]
 grails:
     profile: web
     codegen:

@@ -43,6 +43,11 @@
                 </g:each>
             </ul>
         </li>
+
+        <!-- tag::navBarLocaleDropDown[] -->
+        <navBar:localeDropdown uri="${request.forwardURI}"/>
+        <!-- end::navBarLocaleDropDown[] -->
+
     </content>
 
     <div class="svg" role="presentation">
@@ -53,14 +58,10 @@
 
     <div id="content" role="main">
         <section class="row colset-2-its">
-            <h1>Welcome to Grails</h1>
-
-            <p>
-                Congratulations, you have successfully started your first Grails application! At the moment
-                this is the default page, feel free to modify it to either redirect to a controller or display
-                whatever content you may choose. Below is a list of controllers that are currently deployed in
-                this application, click on each to execute its default action:
-            </p>
+            <!-- tag::welcomeGsp[] -->
+            <h1><g:message code="welcome.title" /></h1>
+            <p><g:message code="welcome.body" /></p>
+            <!-- end::welcomeGsp[] -->
 
             <div id="controllers" role="navigation">
                 <h2>Available Controllers:</h2>
