@@ -35,3 +35,9 @@ We invoke the `TagLib` inside the `<content>` element of the default GSP.
 ----
 include::{sourcedir}/grails-app/views/index.gsp[tag=navBarLocaleDropDown, indent=0]
 ----
+
+We supply to the Tag Lib the `request.forwardURI`
+
+____
+http://docs.grails.org/latest/ref/Servlet%20API/request.html[forwardURI] - Useful for obtaining the current request URI since the request object’s requestURI property returns the original URI, not the matched one.
+____
