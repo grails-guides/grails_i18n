@@ -1,4 +1,4 @@
-include::{commondir}/common-testapp.adoc[]
+include::{commondir}/common-testApp.adoc[]
 
 
 include::{commondir}/common-runapp.adoc[]
