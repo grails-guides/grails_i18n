@@ -20,18 +20,16 @@ class LocaleNavbarTagLib implements GrailsConfigurationAware {
         languages = co.getProperty('guide.languages', List) // <1>
     }
 
-    def localeDropdown = { args ->
+    def localeDropdownListItems = { args ->
         String uri = args.uri
-        out << '<li class="dropdown">'
-        out << '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Languages <span class="caret"></span></a>'
-        out << '<ul class="dropdown-menu">'
+
         for ( String lang : languages ) {
             String languageCode = "language.$lang"
             def locale = RequestContextUtils.getLocale(request) // <2>
-            out << "<li><a href='${uri}?lang=${lang}'>${messageSource.getMessage(languageCode, [] as Object[], null, locale)}</a></li>"
+            def msg = messageSource.getMessage(languageCode, [] as Object[], null, locale) // <3>
+            out << "<li><a href='${uri}?lang=${lang}'>${msg}</a></li>"
         }
-        out << '</ul>'
-        out << '</li>'
+
     }
 
 }

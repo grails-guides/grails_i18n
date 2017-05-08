@@ -19,6 +19,7 @@ include::{sourcedir}/grails-app/taglib/demo/LocaleNavbarTagLib.groovy[]
 
 <1> Retrieve configuration property
 <2> Access current locale
+<3> Retrieving a localized message
 
 We can test the TagLib rendering with a Unit Test.
 
