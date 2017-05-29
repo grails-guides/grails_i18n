@@ -10,3 +10,6 @@ writingTheApp:
   localeNavBar: Locale Navbar
 runningTheApp:
   title: Running the Application
+helpWithGrails:
+  title: Do you need help with Grails?
+
