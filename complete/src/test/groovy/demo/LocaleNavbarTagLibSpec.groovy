@@ -1,11 +1,10 @@
 package demo
 
-import grails.test.mixin.TestFor
+import grails.testing.web.taglib.TagLibUnitTest
 import org.springframework.context.MessageSource
 import spock.lang.Specification
 
-@TestFor(LocaleNavbarTagLib)
-class LocaleNavbarTagLibSpec extends Specification {
+class LocaleNavbarTagLibSpec extends Specification implements TagLibUnitTest<LocaleNavbarTagLib> {
 
     void "LocaleNavbarTagLib method localeDropdown renders"() {
         given:
