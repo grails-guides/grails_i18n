@@ -1,9 +1,12 @@
-sudo: false
+addons:
+  chrome: stable
+  firefox: latest
+sudo: required
+jdk:
+- oraclejdk8
 cache:
   directories:
   - "$HOME/.gradle"
-jdk:
-- oraclejdk8
 before_script:
 - rm -rf target
 script: "./travis-build.sh"
