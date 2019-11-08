@@ -3,7 +3,7 @@ package demo
 import grails.config.Config
 import grails.core.support.GrailsConfigurationAware
 import org.springframework.context.MessageSource
-import org.springframework.web.servlet.support.RequestContextUtils
+import org.springframework.context.i18n.LocaleContextHolder
 
 class LocaleNavbarTagLib implements GrailsConfigurationAware {
 
@@ -23,13 +23,13 @@ class LocaleNavbarTagLib implements GrailsConfigurationAware {
     def localeDropdownListItems = { args ->
         String uri = args.uri
 
-        for ( String lang : languages ) {
+        for (String lang : languages) {
             String languageCode = "language.$lang"
-            def locale = RequestContextUtils.getLocale(request) // <2>
+
+            def locale = LocaleContextHolder.locale
             def msg = messageSource.getMessage(languageCode, [] as Object[], null, locale) // <3>
             out << "<li><a href='${uri}?lang=${lang}'>${msg}</a></li>"
         }
-
     }
-
 }
+
